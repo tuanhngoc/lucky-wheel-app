@@ -1,0 +1,15 @@
+{
+  "name": "lucky-wheel-app",
+  "version": "1.0.0",
+  "description": "Lucky Draw Spinning Wheel Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^28.0.0"
+  }
+}

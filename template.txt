@@ -1,0 +1,17 @@
+# Participants (one per line)
+[Participants]
+John Smith
+Jane Doe
+Alice Johnson
+Bob Wilson
+Charlie Brown
+
+# Prizes (Format: Prize,Quantity - one per line)
+[Prizes]
+First Prize,1
+Second Prize,2
+Third Prize,3
+
+# Granted Winners (Format: Name,Prize - one per line)
+[GrantedWinners]
+John Smith,First Prize

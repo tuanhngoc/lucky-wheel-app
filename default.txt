@@ -1,0 +1,64 @@
+# Participants (one per line)
+[Participants]
+Đại lý Hoàng Hải      
+Đại lý Cương Hướng  
+Đại lý Lực Duyên
+Đại lý Vạn Thi
+Đại lý Đương Loan
+Đại lý Đức Dung       
+Đại lý Khải Lạch
+Đại lý Nghĩa Hương
+Đại lý Trường Liên
+Đại lý Thiện Chiến
+Đại lý Thìn Hoa
+Đại lý Cường Hương
+Đại lý Quảng Hoà 
+Đại lý Khải Liệu
+Đại lý Trung Liệu
+Đại lý Tùng Mận
+Đại lý Mạnh Đông
+Đại lý Hoà Hường
+Đại lý Mai Anh
+Đại lý Tuấn Thu 
+Đại lý Hải Minh   
+Đại lý Lương Chung
+Đại lý Lan Hoạch
+Đại lý Hùng Huệ 
+Đại lý Lục Ca
+Đại lý Dũng Thu
+Đại lý Hiểu Yên
+Đại lý Kính Luyến
+Đại lý Thao Biên
+Đại lý Tuyến Hồng
+Đại lý Hùng Duyên
+Đại lý Hùng Hoa      
+Đại lý Tửu Nguyệt
+Đại lý Cường Hà
+Đại lý Dũng Thơm
+Đại lý Tiền Lương
+Đại lý Xuyến Mùi
+Đại lý Tâm Hạnh
+Đại lý Lý Thắng
+Đại lý Bảo Bình
+Đại lý Tin Huyền
+Đại lý Phòng Nghị
+Đại lý Nghị Nga
+
+
+
+# Prizes (Format: Prize,Quantity - one per line)
+[Prizes]
+
+
+
+Giải khuyến khích,4
+Giải ba,3
+Giải nhì,2
+Giải nhất,1
+
+
+# Granted Winners (Format: Name,Prize - one per line)
+[GrantedWinners]
+Đại lý Nghị Nga,Giải nhì
+Đại lý Tâm Hạnh,Giải nhất
+Đại lý Dũng Thu,Giải nhì

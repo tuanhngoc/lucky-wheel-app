@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucky Wheel Draw</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <h3>Participants</h3>
+                    <textarea id="participants" placeholder="Enter participants (one per line)"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <h3>Prizes</h3>
+                    <textarea id="prizes" placeholder="Enter prizes (Format: Prize,Quantity - one per line)"></textarea>
+                </div>
+                
+                <div class="input-group hidden">
+                    <h3>Granted Winners</h3>
+                    <textarea id="grantedWinners" placeholder="Enter granted winners (Format: Name,Prize - one per line)"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <input type="file" id="dataFile" accept=".txt" />
+                    <a href="template.txt" download class="template-link">Download Template</a>
+                </div>
+
+                <button id="loadData">Load Data</button>
+            </div>
+
+            <div class="wheel-section">
+                <canvas id="wheelCanvas"></canvas>
+                <button id="spinButton">SPIN!</button>
+            </div>
+
+            <div class="results-section">
+                <div id="winner" class="winner-display"></div>
+                <div class="winner-buttons">
+                    <button id="recordWin">Record Win</button>
+                    <button id="dismissWin">Dismiss</button>
+                </div>
+                <div class="results-list">
+                    <h3>Winners List</h3>
+                    <ul id="winnersList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Debug section - hidden by default -->
+        <div class="debug-section hidden">
+            <h3>Debug Information</h3>
+            <div>
+                <label>Current Angle:</label>
+                <span id="debugCurrentAngle">-</span>
+            </div>
+            <div>
+                <label>Current Slice:</label>
+                <span id="debugCurrentSlice">-</span>
+            </div>
+        </div>
+    </div>
+    <script src="wheel.js"></script>
+</body>
+</html>
