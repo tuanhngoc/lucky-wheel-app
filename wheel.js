@@ -50,8 +50,7 @@ class LuckyWheel {
 
         // Winner buttons event listeners
         document.getElementById('recordWin').addEventListener('click', () => {
-            const winner = document.getElementById('winner').textContent.replace('Winner: ', '');
-            this.recordWin(winner);
+            this.recordWin(this.currentWinner);
             this.hideWinner();
         });
 
