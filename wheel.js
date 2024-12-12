@@ -474,13 +474,34 @@ class LuckyWheel {
         this.winnerShown = false; // Reset flag when winner is recorded/dismissed
     }
 
+    addWinnerToList(winner, prize) {
+        const winnersList = document.getElementById('winnersList');
+        const listItem = document.createElement('li');
+        
+        const winnerName = document.createElement('span');
+        winnerName.className = 'winner-name';
+        winnerName.textContent = winner;
+        
+        const winnerPrize = document.createElement('span');
+        winnerPrize.className = 'winner-prize';
+        winnerPrize.textContent = prize;
+        
+        listItem.appendChild(winnerName);
+        listItem.appendChild(winnerPrize);
+        
+        // Add new winner at the top of the list
+        if (winnersList.firstChild) {
+            winnersList.insertBefore(listItem, winnersList.firstChild);
+        } else {
+            winnersList.appendChild(listItem);
+        }
+    }
+
     updateWinnersList() {
         const winnersList = document.getElementById('winnersList');
         winnersList.innerHTML = '';
         this.winners.forEach(winner => {
-            const li = document.createElement('li');
-            li.textContent = `${winner.name} - ${winner.prize}`;
-            winnersList.appendChild(li);
+            this.addWinnerToList(winner.name, winner.prize);
         });
     }
 }

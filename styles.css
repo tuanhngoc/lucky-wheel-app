@@ -21,8 +21,8 @@ body {
 
 .main-content {
     display: grid;
-    grid-template-columns: 300px 1fr 300px;
-    gap: 20px;
+    grid-template-columns: 240px 1fr 360px;
+    gap: 5px;
     align-items: start;
 }
 
@@ -39,6 +39,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
 }
 
 .results-section {
@@ -46,6 +48,9 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .input-group {
@@ -160,18 +165,41 @@ body {
 .results-list {
     max-height: 400px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #winnersList {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 #winnersList li {
     padding: 10px;
     border-bottom: 1px solid #eee;
     font-size: 14px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    width: 100%;
+}
+
+#winnersList li .winner-name {
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+#winnersList li .winner-prize {
+    color: #666;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #spinButton {
@@ -201,6 +229,7 @@ body {
 @media (max-width: 1200px) {
     .main-content {
         grid-template-columns: 1fr;
+        gap: 5px;
     }
     
     .input-section, .wheel-section, .results-section {

@@ -54,11 +54,11 @@
 Giải khuyến khích,4
 Giải ba,3
 Giải nhì,2
-Giải nhất,1
+Giải NHẤT,1
 
 
 # Granted Winners (Format: Name,Prize - one per line)
 [GrantedWinners]
 Đại lý Nghị Nga,Giải nhì
-Đại lý Tâm Hạnh,Giải nhất
+Đại lý Tâm Hạnh,Giải NHẤT
 Đại lý Dũng Thu,Giải nhì
