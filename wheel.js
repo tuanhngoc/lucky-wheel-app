@@ -45,17 +45,46 @@ class LuckyWheel {
                 this.loadDataFromFile(file);
             }
         });
+
+        // Add menu toggle event listener
+        const menuToggle = document.getElementById('menuToggle');
+        menuToggle.addEventListener('click', () => this.toggleMenu());
     }
 
     async checkDefaultFile() {
         try {
             const response = await fetch('default.txt');
             if (response.ok) {
-                const text = await response.text();
-                this.parseFileData(text);
+                const content = await response.text();
+                this.parseFileData(content);
+                // Collapse menu if data is loaded
+                this.collapseMenu();
             }
         } catch (error) {
             console.log('No default.txt file found');
+        }
+    }
+
+    collapseMenu() {
+        const mainContent = document.querySelector('.main-content');
+        const inputSection = document.getElementById('inputSection');
+        mainContent.classList.add('menu-collapsed');
+        inputSection.classList.add('collapsed');
+    }
+
+    expandMenu() {
+        const mainContent = document.querySelector('.main-content');
+        const inputSection = document.getElementById('inputSection');
+        mainContent.classList.remove('menu-collapsed');
+        inputSection.classList.remove('collapsed');
+    }
+
+    toggleMenu() {
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent.classList.contains('menu-collapsed')) {
+            this.expandMenu();
+        } else {
+            this.collapseMenu();
         }
     }
 

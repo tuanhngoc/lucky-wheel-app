@@ -24,6 +24,30 @@ body {
     grid-template-columns: 240px 1fr 360px;
     gap: 5px;
     align-items: start;
+    position: relative;
+}
+
+.menu-toggle {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 10;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.menu-toggle:hover {
+    background-color: #45a049;
 }
 
 .input-section {
@@ -31,6 +55,22 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: left center;
+}
+
+.input-section.collapsed {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-content.menu-collapsed {
+    grid-template-columns: 0px 1fr 360px;
+}
+
+.main-content.menu-collapsed .menu-toggle {
+    left: 10px;
 }
 
 .wheel-section {
