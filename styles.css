@@ -165,12 +165,29 @@ body {
 }
 
 .winner-display {
-    font-size: 24px;
-    margin: 20px 0;
-    padding: 15px;
+    padding: 30px;
     background-color: #e3f2fd;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.winner-name, .winner-prize {
+    font-size: 14px;
+    color: #333;
+}
+
+.winner-modal .winner-display .winner-name {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.winner-modal .winner-display .winner-prize {
+    font-size: 36px;
+    color: #2196f3;
 }
 
 .winner-buttons {
@@ -223,7 +240,6 @@ body {
 #winnersList li {
     padding: 10px;
     border-bottom: 1px solid #eee;
-    font-size: 14px;
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 20px;
@@ -231,6 +247,7 @@ body {
 }
 
 #winnersList li .winner-name {
+    font-size: 14px;
     font-weight: bold;
     color: #333;
     white-space: nowrap;
@@ -240,6 +257,7 @@ body {
 }
 
 #winnersList li .winner-prize {
+    font-size: 14px;
     color: #666;
     text-align: right;
     white-space: nowrap;
@@ -300,10 +318,10 @@ body {
 .modal-content {
     position: relative;
     background: white;
-    padding: 30px;
-    border-radius: 12px;
+    padding: 40px;
+    border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    min-width: 400px;
+    min-width: 500px;
     text-align: center;
     animation: modalAppear 0.3s ease-out;
 }
@@ -320,12 +338,13 @@ body {
 }
 
 .winner-modal .winner-display {
-    font-size: 24px;
-    margin: 20px 0;
-    padding: 15px;
+    padding: 30px;
     background-color: #e3f2fd;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .winner-modal .winner-buttons {

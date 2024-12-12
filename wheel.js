@@ -462,7 +462,11 @@ class LuckyWheel {
         const winnerModal = document.getElementById('winnerModal');
         const winnerButtons = document.querySelector('.winner-buttons');
         
-        winnerDisplay.textContent = `Winner: ${this.currentWinner} - Prize: ${this.currentPrize}`;
+        winnerDisplay.innerHTML = `
+            <div class="winner-name">${this.currentWinner}</div>
+            <div class="winner-prize">${this.currentPrize}</div>
+        `;
+        
         winnerModal.classList.remove('hidden');
         winnerButtons.style.display = 'flex';
         
