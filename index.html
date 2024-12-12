@@ -38,11 +38,6 @@
             </div>
 
             <div class="results-section">
-                <div id="winner" class="winner-display"></div>
-                <div class="winner-buttons">
-                    <button id="recordWin">Record Win</button>
-                    <button id="dismissWin">Dismiss</button>
-                </div>
                 <div class="results-list">
                     <h3>Winners List</h3>
                     <ul id="winnersList"></ul>
@@ -63,6 +58,19 @@
             </div>
         </div>
     </div>
+    
+    <!-- Winner Display Modal -->
+    <div id="winnerModal" class="winner-modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div id="winner" class="winner-display"></div>
+            <div class="winner-buttons">
+                <button id="recordWin">Record Win</button>
+                <button id="dismissWin">Dismiss</button>
+            </div>
+        </div>
+    </div>
+
     <script src="wheel.js"></script>
 </body>
 </html>

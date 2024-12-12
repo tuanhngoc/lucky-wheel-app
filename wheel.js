@@ -35,8 +35,6 @@ class LuckyWheel {
         });
 
         document.getElementById('spinButton').addEventListener('click', () => this.spin());
-        document.getElementById('recordWin').addEventListener('click', () => this.recordWin());
-        document.getElementById('dismissWin').addEventListener('click', () => this.dismissWin());
         
         // File input handler
         document.getElementById('dataFile').addEventListener('change', (event) => {
@@ -49,6 +47,18 @@ class LuckyWheel {
         // Add menu toggle event listener
         const menuToggle = document.getElementById('menuToggle');
         menuToggle.addEventListener('click', () => this.toggleMenu());
+
+        // Winner buttons event listeners
+        document.getElementById('recordWin').addEventListener('click', () => {
+            const winner = document.getElementById('winner').textContent.replace('Winner: ', '');
+            this.recordWin(winner);
+            this.hideWinner();
+        });
+
+        document.getElementById('dismissWin').addEventListener('click', () => {
+            this.dismissWin();
+            this.hideWinner();
+        });
     }
 
     async checkDefaultFile() {
@@ -450,30 +460,47 @@ class LuckyWheel {
 
     showWinner() {
         const winnerDisplay = document.getElementById('winner');
+        const winnerModal = document.getElementById('winnerModal');
+        const winnerButtons = document.querySelector('.winner-buttons');
+        
         winnerDisplay.textContent = `Winner: ${this.currentWinner} - Prize: ${this.currentPrize}`;
-        document.querySelector('.winner-buttons').style.display = 'flex';
-        this.winnerShown = true; // Set flag when winner is shown
+        winnerModal.classList.remove('hidden');
+        winnerButtons.style.display = 'flex';
+        
+        // Enable spin button after animation
+        setTimeout(() => {
+            document.getElementById('spinButton').disabled = false;
+        }, 300);
     }
 
-    recordWin() {
-        if (!this.currentWinner || !this.currentPrize) return;
+    hideWinner() {
+        const winnerModal = document.getElementById('winnerModal');
+        const winnerButtons = document.querySelector('.winner-buttons');
+        
+        winnerModal.classList.add('hidden');
+        winnerButtons.style.display = 'none';
+        document.getElementById('winner').textContent = '';
+    }
+
+    recordWin(winner) {
+        if (!winner) return;
 
         // Update prizes quantity
         const prize = this.prizes.find(p => p.name === this.currentPrize);
         if (prize) prize.quantity--;
 
         // Remove granted winner if applicable
-        const grantedWinnerIndex = this.grantedWinners.findIndex(w => w.name === this.currentWinner);
+        const grantedWinnerIndex = this.grantedWinners.findIndex(w => w.name === winner);
         if (grantedWinnerIndex !== -1) {
             this.grantedWinners.splice(grantedWinnerIndex, 1);
         }
 
         // Add to winners list
-        this.winners.push({ name: this.currentWinner, prize: this.currentPrize });
+        this.winners.push({ name: winner, prize: this.currentPrize });
         this.updateWinnersList();
 
         // Remove winner from participants
-        const index = this.participants.indexOf(this.currentWinner);
+        const index = this.participants.indexOf(winner);
         if (index !== -1) {
             this.participants.splice(index, 1);
         }
